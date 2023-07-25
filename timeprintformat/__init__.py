@@ -94,11 +94,21 @@ def format_time(input_time:float, time_units:str = 'seconds', max_displayed_unit
     
     output_string = []        
     for key in list(output_dict.keys())[::-1]:
-        output_string.insert(0, f'{output_dict[key]} {key},')
+        if output_dict[key] != 1:
+            output_string.insert(0, f'{output_dict[key]} {key},')
+        else:
+            output_string.insert(0, f'{output_dict[key]} {key[:-1]},')
     
+    if len(output_string) == 2:
+        delete_commas = True
+    else:
+        delete_commas = False
     if len(output_string) >= 2:
         output_string.insert(-1, 'and')
-    output_string = ' '.join(output_string)
     
-    return output_string[:-1]
-
+    output_string = ' '.join(output_string)
+    if delete_commas:
+        output_string = output_string.replace(',','')
+        return output_string
+    else:
+        return output_string[:-1]
