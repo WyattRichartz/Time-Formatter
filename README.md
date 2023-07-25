@@ -1,6 +1,7 @@
 # Install with:
 ```
 pip install timeprintformat==1.0.0
+import timeprintformat
 ```
 
 # Information
@@ -8,16 +9,16 @@ This library is a single function that outputs an easy-to-read string of a time 
 
 # Examples
 ```
-format_time(7982.92)
+timeprintformat.format_time(7982.92)
 ```
 > output = '2.21748 hours'
 
 ```
-format_time(7982.92, max_displayed_units=3)
+timeprintformat.format_time(7982.92, max_displayed_units=3)
 ```
 > output = '2 hours, 13 minutes, and 2.92 seconds'
 
 ```
-format_time(7982.92, decimal_points=2, max_displayed_units=2)
+timeprintformat.format_time(7982.92, decimal_points=2, max_displayed_units=2)
 ```
 > output = '2 hours and 13.05 minutes'
