@@ -1,6 +1,7 @@
 # Install with:
 ```
-pip install timeprintformat==1.0.0
+pip install timeprintformat
+
 import timeprintformat
 ```
 
